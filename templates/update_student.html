@@ -1,0 +1,19 @@
+<html>
+<body>
+    <h3>Update Student Name</h3>
+    <form action="{{ url_for('update_student') }}" method="POST">
+        Old Student ID:<br>
+        <input type="text" name="old_id"><br>
+        New Name:<br>
+        <input type="text" name="new_name"><br>
+
+        New Id:<br>
+        <input type="text" name="new_id"><br>
+
+        New Points:<br>
+        <input type="text" name="new_points"><br>
+
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

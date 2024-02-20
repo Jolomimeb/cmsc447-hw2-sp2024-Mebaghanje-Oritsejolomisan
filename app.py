@@ -68,6 +68,33 @@ def remove_student():
 
     return render_template('remove_student.html')
 
+
+@app.route('/updatestudent', methods=['GET', 'POST'])
+def update_student():
+    if request.method == 'POST':
+        try:
+            old_id = request.form['old_id']
+            new_id = request.form['new_id']
+            new_name = request.form['new_name']
+            new_points = request.form['new_points']
+
+            with sql.connect("database.db") as con:
+                cur = con.cursor()
+                cur.execute("UPDATE students SET Id = ?, name = ?, Points = ? WHERE Id = ?", (new_id, new_name, new_points, old_id))
+                con.commit()
+
+                msg = "Record successfully updated"
+        except:
+            con.rollback()
+            msg = "Error in update operation"
+        finally:
+            con.close()
+            return render_template("result.html", msg=msg)
+
+    return render_template('update_student.html')
+
+
+
 if __name__ == '__main__':
     #enables us to auto reload application
     app.run(debug=True)
