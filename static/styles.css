@@ -1,27 +1,27 @@
 body {
-    background-color: #a52a2a; /* A shade of brown */
-    text-align: center; /* Align text and elements to the center */
-    color: white; /* Set text color to white for better contrast */
-    font-family: Arial, sans-serif; /* Optional: Sets a nice font */
+    background-color: #a52a2a; 
+    text-align: center; 
+    color: white; 
+    font-family: Arial, sans-serif; 
 }
 .container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%; /* Adjust as needed */
+    width: 80%; 
 }
 .welcome-text {
-    font-size: 2em; /* Larger text */
-    margin-bottom: 30px; /* Space below the welcome text */
+    font-size: 2em; 
+    margin-bottom: 30px; 
 }
 a {
     display: block;
-    margin: 10px 0; /* Space between links */
-    color: white; /* White text for links */
-    text-decoration: none; /* No underlines for links */
-    font-size: 1.2em; /* Larger text for links */
+    margin: 10px 0; 
+    color: white; 
+    text-decoration: none; 
+    font-size: 1.2em; 
 }
 a:hover {
-    color: #f5deb3; /* Lighter brown color on hover */
+    color: #f5deb3; 
 }
