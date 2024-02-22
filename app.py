@@ -94,6 +94,29 @@ def update_student():
     return render_template('update_student.html')
 
 
+@app.route('/searchstudent', methods=['GET', 'POST'])
+def search_student():
+    if request.method == 'POST':
+        student_id = request.form['id']
+        try:
+            with sql.connect("database.db") as con:
+                cur = con.cursor()
+                cur.execute("SELECT * FROM students WHERE Id = ?", (student_id,))
+                student_data = cur.fetchone()
+
+                if student_data:
+                    msg = f"Student found: ID: {student_data[0]}, Name: {student_data[1]}, Points: {student_data[2]}"
+                else:
+                    msg = "No student found with that ID"
+        except:
+            msg = "Error in search operation"
+        finally:
+            con.close()
+            return render_template("result.html", msg=msg)
+
+    return render_template('search_student.html')
+
+
 
 if __name__ == '__main__':
     #enables us to auto reload application

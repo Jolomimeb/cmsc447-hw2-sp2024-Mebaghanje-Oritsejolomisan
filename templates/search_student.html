@@ -1,0 +1,12 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles2.css') }}">
+<body>
+    <h3>Remove Student</h3>
+    <form action="{{ url_for('search_student') }}" method="POST">
+        <label for="id">Student ID:</label>
+        <input type="text" id="id" name="id" required>
+
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
